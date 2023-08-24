@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Функції JavaScript</title>
+<script type="text/javascript">
+let name;
+let sname;
+let age;
+let repeater = true;
+
+do {
+    ask();
+    say();
+    repeater = confirm("Пройти заповнення ще раз?");
+} while (repeater);
+
+function ask() {
+    name = prompt("Введіть своє ім'я:"); // записали значення глобальної змінної
+    sname = prompt("Введіть своє прізвище:"); // записали значення глобальної змінної
+    age = prompt("Введіть свій вік:"); // записали значення глобальної змінної
+}
+
+function say() {
+    document.write("Ім'я: " + name + "<br />"); // викликали значення глобальної змінної
+    document.write("Прізвище: " + sname + "<br />"); // викликали значення глобальної змінної
+    document.write("Вік: " + age + "<br />"); // викликали значення глобальної змінної
+    document.write("<hr/>");
+}
+</script>
+</head>
+<body>
+</body>
+</html>
