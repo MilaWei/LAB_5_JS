@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Масив Аргументів arguments</title>
+
+<script type="text/javascript">
+function max(a, b, c) {
+    // функція показує максимальне значення аргументу, який переданий при виклику
+    console.log(arguments);
+    let maxValue = Number.NEGATIVE_INFINITY;
+    // Number.NEGATIVE_INFINITY - це спеціальне значення, яке є найменшим від'ємним числом
+    document.write("<p>Number.NEGATIVE_INFINITY = " + maxValue + "<hr/>");
+
+    // перебираємо аргументи з використанням властивості arguments
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] > maxValue) {
+            maxValue = arguments[i];
+        }
+    }
+
+    return maxValue;
+}
+
+let res = max(-33, 33, 777, -666, -22, 888);
+document.write("<p>Максимальне значення одного з аргументів функції = " + res);
+</script>
+</head>
+<body></body>
+</html> 
