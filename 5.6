@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оператор return</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript">
+        function додати(a, b) {
+            return a + b;
+        }
+
+        function відняти(a, b) {
+            return a - b;
+        }
+
+        function помножити(a, b) {
+            return a * b;
+        }
+
+        function піднестиДоСтепеня(основа, показник) {
+            return Math.pow(основа, показник);
+        }
+
+        function корінь(число) {
+            return Math.sqrt(число);
+        }
+
+        function обчислити() {
+            let число1 = parseFloat(prompt('Введіть перше число:'));
+            let число2 = parseFloat(prompt('Введіть друге число:'));
+            let операція = prompt('Введіть арифметичну операцію (+, -, *, ^, sqrt):');
+
+            let результат;
+            switch (операція) {
+                case '+':
+                    результат = додати(число1, число2);
+                    break;
+                case '-':
+                    результат = відняти(число1, число2);
+                    break;
+                case '*':
+                    результат = помножити(число1, число2);
+                    break;
+                case '^':
+                    результат = піднестиДоСтепеня(число1, число2);
+                    break;
+                case 'sqrt':
+                    результат = корінь(число1);
+                    break;
+                default:
+                    alert('Невірна операція');
+            }
+
+            if (!isNaN(результат)) {
+                document.getElementById('result').textContent = 'Результат: ' + результат;
+            } else {
+                document.getElementById('result').textContent = 'Помилка в обчисленнях';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Калькулятор</h1>
+    <button onclick="обчислити()">Обчислити</button>
+    <p id="result"></p>
+</body>
+</html>
