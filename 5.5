@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оператор return</title>
+    <script type="text/javascript">
+        function Sum(a, b) {
+            if (typeof a !== 'number' || typeof b !== 'number') {
+                alert('Параметры должны быть числовыми значениями');
+                return;
+            }
+
+            return a + b;
+        }
+
+        function Power(base, exponent) {
+            if (typeof base !== 'number' || typeof exponent !== 'number') {
+                alert('Параметры должны быть числовыми значениями');
+                return;
+            }
+
+            let result = 1;
+            for (let i = 0; i < exponent; i++) {
+                result *= base;
+            }
+            return result;
+        }
+
+        window.onload = function() {
+            let res1 = Sum(2, 3);
+            document.getElementById('result1').textContent = 'Сумма: ' + res1;
+
+            let res2 = Power(2, 3);
+            document.getElementById('result2').textContent = 'Степень: ' + res2;
+        };
+    </script>
+</head>
+<body>
+    <p id="result1"></p>
+    <p id="result2"></p>
+</body>
+</html>
